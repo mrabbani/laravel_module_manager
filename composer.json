@@ -1,0 +1,16 @@
+{
+    "name": "mrabbani/laravel-module-manager",
+    "description": "Laravel Module Management",
+    "type": "laravel",
+    "authors": [
+        {
+            "name": "mrabbani",
+            "email": "mahbub.rucse@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/console": "5.3.*",
+        "illuminate/database": "5.3.*"
+    }
+}

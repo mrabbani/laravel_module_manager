@@ -1,0 +1,12 @@
+<?php namespace DummyNamespace;
+
+use Illuminate\Database\Eloquent\Model;
+
+class DummyClass extends Model
+{
+    protected $table = '{table}';
+
+    protected $primaryKey = 'id';
+
+    protected $fillable = [];
+}
