@@ -7,7 +7,7 @@ package will help you to manage laravel modular application easily.
 
 ### Installation
 
-<!--`composer require mrabbani/lara-module-manager`-->
+`composer require mrabbani/laravel-module-manager`
 
 Add the module manager service provider to `config/app.php` file
 
@@ -15,7 +15,9 @@ Add the module manager service provider to `config/app.php` file
 
 To create new module run the bellow command:
 
-`php artisan module:create name-of-your-module`
+    php artisan module:create name-of-your-module
+    php artisan module:install {module_alias_name}
+    
 
 If your module name is `module1` the module structure will be
 
@@ -55,6 +57,9 @@ Available commands are:
 - `php artisan module:disable {alias}`
 
 > 'alias' is your module's alias name. you can find module's alias name in `module.json` file of module directory
- 
+
+You must install your module to activate 
+
+``php artisan module:install {alias}``
 #### Credit 
 [WebEd](https://github.com/sgsoft-studio/webed)
