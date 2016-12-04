@@ -66,10 +66,11 @@ class UninstallModuleCommand extends Command
         $namespace = str_replace('\\\\', '\\', array_get($module, 'namespace', '') . '\Providers\UninstallModuleServiceProvider');
         if(class_exists($namespace)) {
             $this->app->register($namespace);
-            save_module_information($module, [
-                'installed' => true
-            ]);
+
         }
+        save_module_information($module, [
+            'installed' => true
+        ]);
         \ModulesManagement::disableModule($this->argument('alias'));
         \ModulesManagement::modifyModuleAutoload($this->argument('alias'), true);
     }

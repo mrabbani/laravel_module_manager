@@ -49,8 +49,7 @@ if (!function_exists('get_all_module_information')) {
     {
         $modulesArr = [];
         $modulePluginDirectory = [
-            config('module_manager.module_directory'),
-            config('module_manager.plugin_directory')
+            config('module_manager.module_directory')
         ];
         foreach ($modulePluginDirectory as $type) {
             if(! $type) {

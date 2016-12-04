@@ -71,10 +71,9 @@ class InstallModuleCommand extends Command
         $namespace = str_replace('\\\\', '\\', array_get($module, 'namespace', '') . '\Providers\InstallModuleServiceProvider');
         if(class_exists($namespace)) {
             $this->app->register($namespace);
-            save_module_information($module, [
-                'installed' => true
-            ]);
         }
-
+        save_module_information($module, [
+            'installed' => true
+        ]);
     }
 }

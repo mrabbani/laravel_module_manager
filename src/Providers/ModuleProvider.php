@@ -24,14 +24,16 @@ class ModuleProvider extends ServiceProvider
      */
     public function register()
     {
+        //Load config
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/module_manager.php', 'module_manager'
+        );
+
         //Load helpers
         $this->loadHelpers();
 
         $this->app->register(ConsoleServiceProvider::class);
         $this->app->register(LoadModulesServiceProvider::class);
-        $this->mergeConfigFrom(
-            __DIR__.'/../../config/module_manager.php', 'module_manager'
-        );
 
         //Register related facades
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
