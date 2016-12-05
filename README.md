@@ -61,5 +61,43 @@ Available commands are:
 You must install your module to activate 
 
 ``php artisan module:install {alias}``
+
+### Loading Component
+You have to load views, config and translation by following [laravel package](https://laravel.com/docs/5.3/packages#resources) 
+
+##### Loading view 
+
+    view(module_alias::view_file)
+
+you may load the **module1** module's `index.blade.php` view like so:
+
+    view('module1::index');
+
+
+##### Loading translation
+
+you may load the **module1** module's `welcome` line from the `messages` file like so:
+
+    trans('module1::messages.welcome');
+##### Loading config file
+
+you may load the **module1** module's `welcome` line from the `messages` file like so:
+
+`config('messages.welcome');`
+
+
+You have to merge the configurations, use the `mergeConfigFrom` method within your `ModuleServiceProvider` provider's `register` method:
+    
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/welcome.php', 'welcome'
+        );
+    }
+
+
+>**You should register all of your module's custom provider in *ModuleServiceProvider* provider's *register* method instead application's *config/app.php* file.**
+
+
 #### Credit 
 [WebEd](https://github.com/sgsoft-studio/webed)
