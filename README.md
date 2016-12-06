@@ -51,6 +51,8 @@ Available commands are:
 - `php artisan module:make:request {alias} {RequestName}`
 - `php artisan module:make:service {alias} {ServiceClassName}`
 - `php artisan module:make:service {alias} {SupportClassName}`
+- `php artisan module:migrate {alias}`
+- `php artisan module:migrate:rollback {alias}`
 - `php artisan module:install {alias}`
 - `php artisan module:uninstall {alias}`
 - `php artisan module:enable {alias}`
