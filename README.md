@@ -93,7 +93,7 @@ You have to merge the configurations, use the `mergeConfigFrom` method within yo
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/welcome.php', 'welcome'
+            __DIR__.'/../../config/messages.php', 'messages'
         );
     }
 
