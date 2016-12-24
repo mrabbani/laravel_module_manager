@@ -65,15 +65,15 @@ class MakeModule extends Command
             $this->moduleType = 'module';
         }
 
-        $this->container['alias'] = str_slug($this->argument('alias'));
+        $this->container['alias'] = snake_case($this->argument('alias'));
 
         $this->step1();
     }
 
     private function step1()
     {
-        $this->moduleFolderName = str_slug($this->ask('Module folder name:', $this->container['alias']));
-        $this->container['name'] = $this->ask('Name of module:', config('app.name') . ' '. $this->container['alias']);
+        $this->moduleFolderName = $this->ask('Module folder name:', $this->container['alias']);
+        $this->container['name'] = $this->ask('Name of module:', config('app.name') . ' '. str_slug($this->container['alias']));
         $this->container['author'] = $this->ask('Author of module:');
         $this->container['description'] = $this->ask('Description of module:', $this->container['name']);
         $this->container['namespace'] = $this->ask('Namespace of module:', $this->laravel->getNamespace() . $this->acceptedTypes[$this->moduleType] . '\\' . studly_case($this->container['alias']));
