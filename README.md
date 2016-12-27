@@ -41,6 +41,7 @@ Available commands are:
 
 - `php artisan module:create {alias}`
 - `php artisan module:make:controller {alias} {ControllerName}`
+- `php artisan module:make:controller {alias} {ControllerName} --resource`
 - `php artisan module:make:command {alias} {CommandName}`
 - `php artisan module:make:facade {alias} {FacadeName}`
 - `php artisan module:make:middleware {alias} {MiddlewareName}`
