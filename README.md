@@ -7,7 +7,15 @@ package will help you to manage laravel modular application easily.
 
 ### Installation
 
-`composer require mrabbani/laravel-module-manager`
+- laravel 5.4
+
+    `composer require mrabbani/laravel-module-manager`
+
+- Laravel 5.3, Add the following line to your `composer.json` file and run `composer install` in your terminal. 
+
+      "mrabbani/laravel-module-manager": "^1.4"
+
+
 
 Add the module manager service provider to `config/app.php` file
 
