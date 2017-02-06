@@ -92,6 +92,7 @@ class ConsoleServiceProvider extends ServiceProvider
             'module_manager.console.command.module-uninstall' => \Mrabbani\ModuleManager\Console\Commands\UninstallModuleCommand::class,
             'module_manager.console.command.disable-module' => \Mrabbani\ModuleManager\Console\Commands\DisableModuleCommand::class,
             'module_manager.console.command.enable-module' => \Mrabbani\ModuleManager\Console\Commands\EnableModuleCommand::class,
+            'module_manager.console.command.module-route-list' => \Mrabbani\ModuleManager\Console\Commands\RouteListCommand::class,
         ];
         foreach ($commands as $slug => $class) {
             $this->app->singleton($slug, function ($app) use ($slug, $class) {

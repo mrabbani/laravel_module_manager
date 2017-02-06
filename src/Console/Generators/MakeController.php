@@ -42,6 +42,7 @@ class MakeController extends AbstractGenerator
 
     protected function getDefaultNamespace($rootNamespace)
     {
+//        ($this->getNamespace($this->argument('alias')));
         return 'Http\\Controllers\\' . $this->argument('name');
     }
 

@@ -20,9 +20,8 @@ abstract class AbstractGenerator extends GeneratorCommand
             case config('module_manager.module_directory'):
                 $path = module_base_path();
                 break;
-            case config('module_manager.module_directory'):
             default:
-                $path = plugins_base_path();
+                $path = module_base_path();
                 break;
         }
         if (!ends_with('/', $path)) {
@@ -146,5 +145,12 @@ abstract class AbstractGenerator extends GeneratorCommand
         }
 
         return $this;
+    }
+    protected function qualifyClass($name)
+    {
+        $rootNamespace = $this->rootNamespace();
+    
+        return $this->getDefaultNamespace(trim($rootNamespace, '\\'));
+   
     }
 }
