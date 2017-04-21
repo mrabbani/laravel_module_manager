@@ -167,7 +167,7 @@ class ModulesManagement
             return $this;
         }
         $moduleAutoloadType = array_get($module, 'autoload', 'psr-4');
-        $relativePath = str_replace(base_path() . '/', '', str_replace('module.json', '', array_get($module, 'file', ''))) . 'src';
+        $relativePath = str_replace(base_path() . DIRECTORY_SEPARATOR, '', str_replace('module.json', '', array_get($module, 'file', ''))) . 'src';
 
         $moduleNamespace = array_get($module, 'namespace');
 
