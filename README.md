@@ -27,7 +27,7 @@ package will help you to manage laravel modular application easily.
 
       `"mrabbani/laravel-module-manager": "^1.4"`
 
-Add the module manager service provider to `config/app.php` file
+If you are using *Laravel<5.5* you have to add module manager service provider to `config/app.php` file
 
 `Mrabbani\ModuleManager\Providers\ModuleProvider::class,`
 
