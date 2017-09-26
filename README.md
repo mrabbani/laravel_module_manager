@@ -19,7 +19,7 @@ package will help you to manage laravel modular application easily.
 
 ### Installation
 
-- laravel 5.4
+- laravel 5.4 or 5.5
 
     `composer require mrabbani/laravel-module-manager`
 
