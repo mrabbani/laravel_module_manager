@@ -94,7 +94,8 @@ class RouteListCommand extends Command
     public function setModulesNamespace()
     {
         if($this->module !== 'all') {
-            $modules = get_module_information($this->module);
+            $modules[] = get_module_information($this->module);
+    
         } else {
             $modules = get_all_module_information();
         }

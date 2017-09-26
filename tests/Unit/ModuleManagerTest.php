@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Mrabbani\Tests\Unit;
 
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;

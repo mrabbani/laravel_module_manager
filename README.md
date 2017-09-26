@@ -1,7 +1,19 @@
+# Laravel Module Manager
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- Uses
+    - [Configuration](#configuration)
+    - [Available Commands](#available-commands)
+    - [Loading Component](#loading-component)
+        - [Loading View](#loading-view)
+        - [Loading Translation](#loading-translation)
+        - [Loading Config File](#loading-config-file)
+  
 # Introduction
 When you work on small project, you will feel laravel default structure 
 is enough. When your project grows up, you will think to divide 
-your app into  module where each module will contain all of it resources
+your app into  modules where each module will contain all of it resources
 such as Controllers, Models, Views, Migrations, Config etc. This `laravel-module-manager` 
 package will help you to manage laravel modular application easily.
 
@@ -24,7 +36,7 @@ To create new module run the bellow command:
     php artisan module:create name-of-your-module
     php artisan module:install {module_alias_name}
     
-
+### Folder Structure
 If your module name is `module1` the module structure will be
 
 ![Module Structure](https://mrabbani.github.io/public/images/module_structure.png "Module Structure")
@@ -40,7 +52,7 @@ into your application's base directory. If you want to change publish
 Now you can change the default *modules* directory by changing 
 `module_directory` value of `config/module_manager.php` file.
 
-### Available commands
+### Available Commands
 
 To see all module related commands run `php artisan` into terminal.
 Available commands are:
@@ -75,7 +87,7 @@ You must install your module to activate
 ### Loading Component
 You have to load views, config and translation by following [laravel package](https://laravel.com/docs/5.3/packages#resources) 
 
-##### Loading view 
+##### Loading View 
 
     view(module_alias::view_file)
 
@@ -84,12 +96,12 @@ you may load the **module1** module's `index.blade.php` view like so:
     view('module1::index');
 
 
-##### Loading translation
+##### Loading Translation
 
 you may load the **module1** module's `welcome` line from the `messages` file like so:
 
     trans('module1::messages.welcome');
-##### Loading config file
+##### Loading Config File
 
 you may load the **module1** module's `welcome` line from the `messages` file like so:
 

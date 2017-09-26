@@ -34,7 +34,7 @@ class MakeRepository extends AbstractGenerator
      *
      * @return bool|null
      */
-    public function fire()
+    public function handle()
     {
         $nameInput = $this->getNameInput();
 
