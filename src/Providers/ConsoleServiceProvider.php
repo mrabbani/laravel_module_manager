@@ -51,6 +51,7 @@ class ConsoleServiceProvider extends ServiceProvider
 //            'module_manager.console.generator.make-view' => \Mrabbani\ModuleManager\Console\Generators\MakeView::class,
             'module_manager.console.generator.make-migration' => \Mrabbani\ModuleManager\Console\Generators\MakeMigration::class,
             'module_manager.console.generator.make-command' => \Mrabbani\ModuleManager\Console\Generators\MakeCommand::class,
+            'module_manager.console.generator.make-seeder' => \Mrabbani\ModuleManager\Console\Generators\MakeSeeder::class,
         ];
         foreach ($generators as $slug => $class) {
             $this->app->singleton($slug, function ($app) use ($slug, $class) {
@@ -93,6 +94,7 @@ class ConsoleServiceProvider extends ServiceProvider
             'module_manager.console.command.disable-module' => \Mrabbani\ModuleManager\Console\Commands\DisableModuleCommand::class,
             'module_manager.console.command.enable-module' => \Mrabbani\ModuleManager\Console\Commands\EnableModuleCommand::class,
             'module_manager.console.command.module-route-list' => \Mrabbani\ModuleManager\Console\Commands\RouteListCommand::class,
+            'module_manager.console.command.module-db-seed' => \Mrabbani\ModuleManager\Console\Commands\ModuleSeedCommand::class,
         ];
         foreach ($commands as $slug => $class) {
             $this->app->singleton($slug, function ($app) use ($slug, $class) {

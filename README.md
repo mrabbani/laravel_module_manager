@@ -70,6 +70,9 @@ Available commands are:
 - `php artisan module:make:request {alias} {RequestName}`
 - `php artisan module:make:service {alias} {ServiceClassName}`
 - `php artisan module:make:support {alias} {SupportClassName}`
+- `php artisan module:make:seeder {alias} {SeederClassName}`
+- `php artisan module:db:seed {alias}` 
+- `php artisan module:db:seed {alias} --class={SeederClassName}`
 - `php artisan module:migrate {alias}`
 - `php artisan module:migrate:rollback {alias}`
 - `php artisan module:routes`
