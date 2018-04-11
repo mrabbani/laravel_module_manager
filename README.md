@@ -9,6 +9,7 @@
         - [Loading View](#loading-view)
         - [Loading Translation](#loading-translation)
         - [Loading Config File](#loading-config-file)
+        - [Register Middleware](#register-middleware)
   
 # Introduction
 When you work on small project, you will feel laravel default structure 
@@ -119,7 +120,33 @@ You have to merge the configurations, use the `mergeConfigFrom` method within yo
             __DIR__.'/../../config/messages.php', 'messages'
         );
     }
+##### Register Middleware 
 
+You should create a `MiddlewareServiceProvider` provider to register your middleware dynamically. 
+
+    
+```
+
+use Illuminate\Support\ServiceProvider;
+
+class MiddlewareServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        /**
+         * @var Router $router
+         */
+        $router = $this->app['router'];
+
+        $router->aliasMiddleware('middleware-shortname', MiddlewareClassName::class);
+    }
+}
+   ```
 
 >**You should register all of your module's custom provider in *ModuleServiceProvider* provider's *register* method instead application's *config/app.php* file.**
 
